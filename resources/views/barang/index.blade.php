@@ -24,28 +24,20 @@
                                             <th>Aksi</th>                                       
                                         </tr>
                                     </thead>
-
+                                    @forelse ($brg as $item)
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>SR</td>
-                                            <td>Surya</td>
-                                            <td>36,000</td>
-                                            <td>
-                                                <a href="#" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                            </td>
+                                        <td>{{$nomor++}}</td>
+                                            <td>{{$item->kode_barang}}</td>
+                                            <td>{{$item->nama_barang}}</td>
+                                            <td>{{$item->harga}}</td>
+                                            <td><a href="#" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>SP</td>
-                                            <td>Sampoerna</td>
-                                            <td>35,000</td>
-                                            <td>
-                                                <a href="#" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                        </tr>                                        
+                                    @empty
+
+                                    @endforelse 
                                                                              
                                     </tbody>
                                 </table>
